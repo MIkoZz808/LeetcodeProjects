@@ -1,0 +1,17 @@
+//Palindrome by converting integer to string
+class Solution {
+    public boolean isPalindrome(int x) {
+        String s = String.valueOf(x);
+
+        //first loop to go from start to half
+        for(int i = 0; i <= s.length()/2; i++){
+            //second loop to go from end to half
+            for(int j = s.length() - 1; j >= s.length()/2; j--){
+                if(s.charAt(i) != s.charAt(j))
+                    return false;
+                i++;
+            }
+        }
+        return true;
+    }
+}
