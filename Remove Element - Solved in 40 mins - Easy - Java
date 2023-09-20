@@ -1,0 +1,19 @@
+//Remove the element from an array where the elemnet to be removed is a given input and is equal to 'val'
+//'k' is the element where the elements of the array are not equal to 'val'
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int[] expectedNums = new int[nums.length];
+        int k = 0;
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] != val){
+                expectedNums[k] = nums[i];
+                k++;
+            }
+        }
+
+        for(int i = 0; i < expectedNums.length; i++){
+            nums[i] = expectedNums[i];
+        }
+        return k;
+    }
+}
