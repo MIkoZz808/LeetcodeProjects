@@ -1,0 +1,13 @@
+//Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+//I solved it in 5 mins, but with 2 nested loops which equals to O(n^2) "Worst time complexity"
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        for(int i = 0; i < nums.length - 1; i++){
+            for(int j = i + 1; j < nums.length; j++){
+            if(nums[i] == nums[j])
+                return true;
+            }    
+        }
+        return false;
+    }
+}
