@@ -1,0 +1,15 @@
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        //check if the number is in the hashset
+        //if yes return true
+        //if no add it to the hashset
+        
+        HashSet<Integer> seen = new HashSet<>();
+        for(int num : nums){
+            if(seen.contains(num))
+                return true;
+            seen.add(num);
+        }
+        return false;
+    }
+}
