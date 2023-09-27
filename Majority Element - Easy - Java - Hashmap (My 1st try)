@@ -1,0 +1,34 @@
+//Majority element Solved using Hashmap, it was my first attempt to solve it
+//1. Get all elements from the array nums[] and put them in a Hashmap called count
+//2. Where the same element is being repeated add 1 to the value
+//3. then create a maxCount integer which will be compared to a frequency integer(it is the value of each repeated element in the hashmap)
+//4. then set the integer value of majorityElement equal to the key of with the highest frequency
+//5. Check if maxCount is >= nums[] length / 2, then return majorityElement as the true value, else return -1
+class Solution {
+    public int majorityElement(int[] nums) {
+        HashMap<Integer, Integer> count = new HashMap<>();
+
+        for(int num : nums){
+            count.put(num, count.getOrDefault(num, 0) + 1);
+        } 
+
+        int majorityElement = 0;
+        int maxCount = 0;
+
+        for(Map.Entry<Integer,Integer> entry : count.entrySet()){
+            int num = entry.getKey(); //the key of the repeated number
+            int frequency = entry.getValue(); //how many times the number has been repeated
+
+            if(frequency > maxCount){
+                maxCount = frequency;
+                majorityElement = num;
+            }
+        }
+
+        if(maxCount >= (nums.length) / 2){
+            return majorityElement;
+        }else{
+            return -1;
+        }
+    }
+}
