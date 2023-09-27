@@ -1,0 +1,8 @@
+//This approach for solving the majority element problem is done by sorting the array nums[], thus the time complexity is O(n logn) where n is relative to the size of the array
+class Solution {
+    public int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+        return nums[n/2];
+    }
+}
