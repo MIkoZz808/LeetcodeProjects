@@ -1,0 +1,20 @@
+//Moore Voting Algorithm has a time complexity of O(n) becasue it iterates through the array only once
+//Moore Voting Algorithm is used to get the Majority Element in an array where the element will be the n / 2, using the count and the candidate Inetger elements
+class Solution {
+    public int majorityElement(int[] nums) {
+        int count = 0;
+        int candidate = 0;
+
+        for(int num : nums){
+            if(count == 0)
+                candidate = num;
+
+            if(candidate == num){
+                count++;
+            }else{
+                count--;
+            }
+        }
+        return candidate;
+    }
+}
