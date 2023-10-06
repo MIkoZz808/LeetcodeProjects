@@ -1,0 +1,21 @@
+//first attempt trying to solve the is Anagram problem
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        char[] chars = s.toCharArray(); // initialize the char[] array with "s" string
+                                        // so that the array is not filled with null values
+        Arrays.sort(chars);
+
+        char[] chart = t.toCharArray();
+        Arrays.sort(chart);
+
+        if(chars.length != chart.length)
+            return false;
+
+        for(int i = 0; i < chars.length; i++){
+            if(chars[i] != chart[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+}
