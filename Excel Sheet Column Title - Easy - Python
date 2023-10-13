@@ -1,0 +1,22 @@
+//Given an integer columnNumber, return its corresponding column title as it appears in an Excel sheet.
+/* Example:
+Given the input 701:
+
+Iterative Approach:
+
+First iteration: remainder = 24, quotient = 26; result = ["Y"]
+Second iteration: remainder = 25, quotient = 0; result = ["Y", "Z"]
+No further iterations since quotient is now 0; final result = "ZY" */
+
+class Solution:
+    def convertToTitle(self, columnNumber: int) -> str:
+        result = ""
+
+        while columnNumber > 0:
+            columnNumber -= 1
+
+            curChar = chr(ord('A') + columnNumber % 26)
+            result = curChar + result
+            columnNumber //= 26; 
+        
+        return result
