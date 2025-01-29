@@ -1,0 +1,43 @@
+//Each open parantheses had an equivalent closing parantheses
+class Solution {
+    public boolean isValid(String s) {
+        if(s.length()%2 != 0){
+            return false;
+        }
+
+        for(int i=0; i<s.length();i++){
+            for(int j=i+1; j<s.length(); j++){
+                if(s.charAt(i) == '('){
+                    if(s.charAt(j)==')'){
+                        break;
+                    }else{
+                        if(j == s.length()-1 && s.charAt(j)!=')'){
+                            return false;
+                        }
+                    }
+                }
+
+                if(s.charAt(i) == '['){
+                    if(s.charAt(j)==']'){
+                        break;
+                    }else{
+                        if(j == s.length()-1 && s.charAt(j)!=']'){
+                            return false;
+                        }
+                    }
+                }
+
+                if(s.charAt(i) == '{'){
+                    if(s.charAt(j)=='}'){
+                        break;
+                    }else{
+                        if(j == s.length()-1 && s.charAt(j)!='}'){
+                            return false;
+                        }
+                    }
+                }
+
+            }
+        } return true;
+    }
+}
