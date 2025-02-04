@@ -1,0 +1,19 @@
+//time complexity O(n), since in the worst case it will check the whole array
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        for(int i = 0; i<nums.length; i++){
+            if(nums[0]>target){
+                return i;
+            }
+            if(nums[nums.length-1]<target){
+                return nums.length;
+            }
+            if(nums[i] == target){
+                return i;
+            }else if(nums[i]>target && nums[i-1]<target){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
